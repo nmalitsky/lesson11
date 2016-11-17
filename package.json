@@ -1,0 +1,29 @@
+{
+  "name": "lesson11",
+  "version": "1.0.0",
+  "description": "ND-2 Mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nmalitsky/lesson11.git"
+  },
+  "keywords": [
+    "mongoose",
+    "task",
+    "tracker"
+  ],
+  "author": "Nikolay Malitsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmalitsky/lesson11/issues"
+  },
+  "homepage": "https://github.com/nmalitsky/lesson11#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.8"
+  }
+}
