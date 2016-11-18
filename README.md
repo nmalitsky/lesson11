@@ -19,7 +19,7 @@
 
  
 
-**Поиск** - GET,
+**Поиск** - GET
 
 1.  /api/users, query: ?name=U1&email=aav\@bbs.ru или ПУСТО (найти все)  
     Фильтрует по комбинации полей (req.query)
@@ -35,7 +35,7 @@
 
  
 
-**Удаление** - DELETE,
+**Удаление** - DELETE
 
 1.  /api/users, body: { “name”, “U1”, “email”: “aav\@bbs.ru” } или ПУСТО
     (удалить все)  
@@ -58,7 +58,7 @@
 
  
 
-**Поиск** - GET,
+**Поиск** - GET
 
 1.  /api/tasks, query: ?name=KillAll&status=open&user=... или ПУСТО (найти все)  
     Фильтрует по комбинации полей (req.query)
@@ -75,7 +75,7 @@
 
  
 
-**Удаление** - DELETE,
+**Удаление** - DELETE
 
 1.  /api/tasks, body: { “name”, “killAll”, “status”: “open” (опц.), “user”:
     “....” (опц.)} или ПУСТО (удалить все)  
@@ -86,7 +86,7 @@
 
  
 
-**Статистика по закрытым задача** - GET,
+**Статистика по закрытым задача** - GET
 
 /api/tasks\_close\_stat
 

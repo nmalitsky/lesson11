@@ -29,7 +29,7 @@ app.use((err, req, res, next) => {
 });
 
 app.all('/*', (req, res) => {
-	res.status(400).json({ message: 'Undefinded URL - use /api/users OR /api/tasks' });
+	res.status(400).json({ message: 'Undefinded URL - use /api/users OR /api/tasks OR /api/tasks_close_stat' });
 });
 
 app.listen(port);
