@@ -4,11 +4,11 @@ module.exports = class Task {
 	constructor (task) {
 		this.name = task.name;
 		this.status = task.status;
-		this.user_id = task.user_id;
+		this.user = task.user;
 	}
 
 	show() {
-		console.log(`Task: ${this.name}, status: ${this.status}, linked to user (ID): ${this.user_id}`);
+		console.log(`Task: ${this.name}, status: ${this.status}, linked to user: ${this.user}`);
 	}
 
 	toSearch() {
@@ -16,13 +16,13 @@ module.exports = class Task {
 
 		if(this.name) obj['name'] = this.name;
 		if(this.status) obj['status'] = this.status;
-		if(this.user_id) obj['user_id'] = this.user_id;
+		if(this.user) obj['user'] = this.user;
 
 		return obj;
 	}
 
 	get obj() {
-		return {name: this.name, status: this.status, user_id: this.user_id};
+		return {name: this.name, status: this.status, user: this.user};
 	}
 }
 

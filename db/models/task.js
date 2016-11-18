@@ -12,7 +12,7 @@ var TaskSchema   = new Schema({
 		default: 'open',
 		required: true
 	}, 
-	user_id: {
+	user: {
 		type: String
 	}
 });
