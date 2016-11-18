@@ -27,7 +27,6 @@
 -   /api/users/:user\_id, где user\_id = \_id из коллекции users  
     Поиск по \_id пользователя
 
-  
 **Редактирование** - PUT
 
 -   /api/users/:user\_id, где user\_id = \_id из коллекции users, { “name”,
@@ -71,6 +70,15 @@
 
 -   /api/tasks/:task\_id, где task\_id = \_id из коллекции tasks, body: {
     “name”, “killAll”, “status”: “open”, “user”: “....”}
+
+    1.  Открыть задачу  
+        /api/tasks/xxxxxx, body: {“status”: “open”}
+
+    2.  Закрыть задачу  
+        /api/tasks/xxxxxx, body: {“status”: “close”}
+
+    3.  Делегировать задачу на пользователя  
+        /api/tasks/xxxxxx, body: {“user”: “U1”}
 
  
 
