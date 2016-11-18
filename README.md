@@ -14,14 +14,14 @@
 
 **Создание** - POST
 
-/api/users, body: { “name”, “U1”, “email”: “aav\@bbs.ru” }  
+/api/users, body: { “name”, “U1”, “email”: “av\@bbs.ru” }  
 Обязательные поля: *name*
 
  
 
 **Поиск** - GET
 
-1.  /api/users, query: ?name=U1&email=aav\@bbs.ru или ПУСТО (найти все)  
+1.  /api/users, query: ?name=U1&email=av\@bbs.ru или ПУСТО (найти все)  
     Фильтрует по комбинации полей (req.query)
 
     1.  /api/users/:user\_id, где user\_id = \_id из коллекции users  
@@ -30,15 +30,15 @@
 **Редактирование** - PUT
 
 /api/users/:user\_id, где user\_id = \_id из коллекции users, { “name”, “U1”,
-“email”: “aav\@bbs.ru” }  
+“email”: “av\@bbs.ru” }  
 Обновление по \_id пользователя
 
  
 
 **Удаление** - DELETE
 
-1.  /api/users, body: { “name”, “U1”, “email”: “aav\@bbs.ru” } или ПУСТО
-    (удалить все)  
+1.  /api/users, body: { “name”, “U1”, “email”: “av\@bbs.ru” } или ПУСТО (удалить
+    все)  
     Удаляет согласно фильтру (req.body)
 
     1.  /api/users/:user\_id, где user\_id = \_id из коллекции users  
@@ -52,8 +52,8 @@
 
 **Создание** - POST
 
-/api/tasks, body: { “name”, “killAll”, “status”: “open” (опц.), “user\_id”:
-“....” (опц.)}  
+/api/tasks, body: { “name”, “killAll”, “status”: “open” (опц.), “user”: “....”
+(опц.)}  
 Обязательные поля: *name, status*
 
  
