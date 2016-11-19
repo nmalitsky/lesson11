@@ -94,4 +94,52 @@ routerUsersAPI.route('/users/:user_id')
 		});
 	});
 
+routerUsersAPI.route('/users_closed_tasks_stat')
+	.get((req, res) => {
+		User.aggregate([
+			{
+			  $lookup : {
+			    from: "tasks",
+			    localField: "name",
+			    foreignField: "user",
+			    as: "tasks"
+			    }
+			},
+			{$unwind: "$tasks"},
+			{
+			  $match: {
+			    "tasks.status": "close"
+			    }
+			},
+			{
+			  $project: {
+			    name: 1, 
+			    count: {
+			      $add: [1]
+			      }
+			    }
+			  },
+			{
+			  $group: {
+			    _id: "$name", 
+			    closed_tasks: {
+			      $sum: "$count"
+			      }
+			    }
+			  },
+			{
+			  $sort: {
+			    closed_tasks: -1
+			    }
+			  }	
+		], (err, result) => {
+		if(err) {
+			res.status(400).send(err);
+		} else {
+			res.status(200).json(result);
+		}
+	    });
+	});
+
+
 module.exports = routerUsersAPI;

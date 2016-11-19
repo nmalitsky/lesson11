@@ -94,42 +94,4 @@ routerTasksAPI.route('/tasks/:task_id')
 		});
 	});
 
-routerTasksAPI.route('/tasks_close_stat')
-	.get((req, res) => {
-	    Task.aggregate([
-	        {
-	            $match: {
-	                status: "close"
-	            }
-	        },
-	        {   
-	            $project: {
-	                user: 1, 
-	                count: {
-	                    $add: [1]
-	                }
-	            }
-	        },
-	        {
-	            $group: {
-	                _id: "$user", 
-	                close_count: {
-	                    $sum: "$count"
-	                }
-	            }
-	        },
-	        {
-	            $sort: {
-	                close_count: -1
-	            }
-	        }
-	    ], (err, result) => {
-		if(err) {
-			res.status(400).send(err);
-		} else {
-			res.status(200).json(result);
-		}
-	    });    
-	});
-
 module.exports = routerTasksAPI;
