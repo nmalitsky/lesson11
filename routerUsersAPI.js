@@ -105,7 +105,9 @@ routerUsersAPI.route('/users_closed_tasks_stat')
 			    as: "tasks"
 			    }
 			},
-			{$unwind: "$tasks"},
+			{
+			  $unwind: "$tasks"
+			},
 			{
 			  $match: {
 			    "tasks.status": "close"
